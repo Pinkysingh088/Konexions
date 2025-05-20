@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href= "C:\Users\Anushka_Backend\Documents\Konexions\photos\koneXion_logo.png" type="image/png">
+  <title>Konexions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top header */
+    .header {
+      background-color: #001f3f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      font-size: 16px;
+    }
+
+    /* Navigation */
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .branding .logo {
+  height: 40px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #002147; /* Navy Blue */
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0056b3;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  color: #002147;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #0056b3;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #001f3f;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-menu li:hover .dropdown-content {
+      display: block;
+    }
+/* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;      /* Reduced padding */
+  width: 32px;           /* Reduced width */
+  color: #fff;
+  font-size: 14px;       /* Smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 10px;    /* Adjusted hover padding */
+}
+
+.branding .logo {
+  height: 60px;
+  width: auto;
+}
+/*media image styles*/
+.banner-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+  </style>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<bodyhtm>
+
+  <!-- Top Header -->
+  <header class="header">
+    <div class="logo">
+     
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone icon"></i>
+        <span>+91-9876543210</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope icon"></i>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<nav class="navbar">
+  <div class="branding">
+    <a href="index.php">
+      <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\kon_logo.png" alt="koneXion Logo" class="logo">
+    </a>
+  </div>
+  <ul class="nav-menu">
+    <li class="has-dropdown">
+      <a href="#">About Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="company_profile.html">Company Profile</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="index.html">CSR</a>
+        <a href="sustainability.html">Sustainability</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="general_staffing.html">General Staffing</a>
+        <a href="professional_satffing.html">Professional Staffing</a>
+        <a href="digital_staffing.html">Digital</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Media <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="press_release.html">Press Release</a>
+        <a href="#">Press Coverage</a>
+        <a href="#">Media Contact</a>
+      </div>
+    </li>
+    <li><a href="#">Career</a></li>
+    <li class="has-dropdown">
+      <a href="#">Overseas <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="#">Dubai</a>
+      </div>
+    </li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Full-width banner image after nav bar -->
+<div class="banner-container">
+  <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\media.jpeg" alt="Banner" class="banner-image">
+</div>
+
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">About</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="company_profile.php" style="color: black; text-decoration: none;">Company Profile</a></li><br>
+        <li><a href="leadership.php" style="color: black; text-decoration: none;">Leadership</a></li><br>
+        <li><a href="index.php" style="color: black; text-decoration: none;">CSR</a></li><br>
+        <li><a href="sustainability.php" style="color: black; text-decoration: none;">Sustainability</a></li><br>
+      </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="general_staffing.php" style="color: black; text-decoration: none;">General Staffing</a></li><br>
+        <li><a href="professional_staffing.php" style="color: black; text-decoration: none;">Professional Staffing</a></li><br>
+        <li><a href="digital_platform.php" style="color: black; text-decoration: none;">Digital Platform</a></li><br>
+      </ul>
+    </div>
+
+    <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" style="color: black; text-decoration: none;">Blogs</a></li><br>
+        <li><a href="#" style="color: black; text-decoration: none;">Case Studies</a></li><br>
+        <li><a href="#" style="color: black; text-decoration: none;">Careers</a></li><br>
+        <li><a href="#" style="color: black; text-decoration: none;">Contact Us</a></li><br>
+      </ul>
+    </div>
+
+    <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+      <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;">
+        <option selected disabled>Select Country</option>
+        <option>Dubai</option>
+        <option>India</option>
+        <option>Singapore</option>
+        <option>Malaysia</option>
+        <option>Philippines</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2025 KoneXions. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

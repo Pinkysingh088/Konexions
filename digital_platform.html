@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="C:\Users\Anushka_Backend\Documents\Konexions\photos\koneXion_logo.png" type="image/png">
+  <title>Konexions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top header */
+    .header {
+      background-color: #001f3f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      font-size: 16px;
+    }
+
+    /* Navigation */
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .branding .logo {
+  height: 40px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #002147; /* Navy Blue */
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0056b3;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  color: #002147;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #0056b3;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #001f3f;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-menu li:hover .dropdown-content {
+      display: block;
+    }
+    /* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 12px 10px;
+  width: 40px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 15px;
+}
+.branding .logo {
+  height: 60px; /* Adjust height as needed */
+  width: auto;
+}
+/*Digital Styles*/
+.hero-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+/*paragraph Styles*/
+.intro-text {
+  max-width: 10000px;
+  margin: 10px auto;
+  padding: 0 20px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+/*button sections styles*/
+
+    .tab-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .tab-button {
+      padding: 30px 20px;
+      background-color: #002244;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      background-color: #ffb400;
+      color: #002244;
+    }
+
+    .tab-content {
+      display: none;
+      max-width: 1200px;
+      margin: auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content h2 {
+      color: #002244;
+      margin-bottom: 15px;
+    }
+
+    .tab-content p {
+      line-height: 1.6;
+      color: #333;
+    }
+    /* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 12px 10px;
+  width: 40px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 15px;
+}
+.branding .logo {
+  height: 60px; /* Adjust height as needed */
+  width: auto;
+}
+
+  </style>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<bodyhtm>
+
+  <!-- Top Header -->
+  <header class="header">
+    <div class="logo">
+     
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone icon"></i>
+        <span>+91-9876543210</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope icon"></i>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<nav class="navbar">
+  <div class="branding">
+    <a href="index.html">
+      <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\kon_logo.png" alt="koneXion Logo" class="logo">
+    </a>
+  </div>
+  <ul class="nav-menu">
+    <li class="has-dropdown">
+      <a href="#">About Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="company_profile.html">Company Profile</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="index.html">CSR</a>
+        <a href="sustainability.html">Sustainability</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="general_staffing.html">General Staffing</a>
+        <a href="professional_staffing.html">Professional Staffing</a>
+        <a href="digital_platform.html">Digital Platform</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Media <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="press_release.html">Press Release</a>
+        <a href="#">Press Coverage</a>
+        <a href="#">Media Contact</a>
+      </div>
+    </li>
+    <li><a href="#">Career</a></li>
+    <li class="has-dropdown">
+      <a href="#">Overseas <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="#">Dubai</a>
+      </div>
+    </li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Full-width image below navbar -->
+<div class="hero-image">
+  <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\digital.jpeg" alt="Digital Banner">
+</div>
+
+<!-- Paragraph section -->
+<div class="intro-text">
+  <p>
+    The workforce is the lifeblood of any organization, and with the right people, you can transform businesses.
+    At Quess, we aim to do just that – equip companies with world-class workforce management systems and solutions to help them succeed.
+  </p>
+  <p>
+    As a globally recognized workforce management services provider, we offer end-to-end HRO services that are aimed at solving complex HR challenges.
+    From customized staffing services, expert talent acquisition, search and recruitment, payroll compliance, training and skill development, to manpower management,
+    Quess provides all the tools necessary to drive your business growth.
+  </p>
+</div>
+<!---buttons sections-->
+
+  <div class="tab-buttons">
+    <button class="tab-button active" onclick="showTab('academy', this)">Hamara Academy</button>
+    <button class="tab-button" onclick="showTab('jobs', this)">Hamara Jobs</button>
+    <button class="tab-button" onclick="showTab('hr', this)">Hamara HR</button>
+    <button class="tab-button" onclick="showTab('benefits', this)">Hamara Benefits</button>
+    <button class="tab-button" onclick="showTab('taskmo', this)">Taskmo</button>
+  </div>
+
+  <div id="academy" class="tab-content active">
+    <h2>Hamara Academy</h2>
+    <p>Hamara Academy is a leading upskilling platform dedicated to empowering individuals and organizations with the knowledge and skills needed to thrive in today’s competitive world. Our innovative LMS features include progress tracking, mobile-friendly access, interactive lessons, and collaborative tools, making learning flexible and engaging. Whether you’re looking to upskill, reskill, or advance your career, Hamara Academy is your trusted partner in achieving success.</p>
+  </div>
+
+  <div id="jobs" class="tab-content">
+    <h2>Hamara Jobs</h2>
+    <p>Hamara Jobs is a proprietary blue-collar auto-hiring technology platform. Developed with a mission to digitise job discovery, it generates employment opportunities for blue-collar job seekers across tier 1, 2 & 3 Indian cities.
+
+    Hamara Jobs provides a superior hiring process that is 100% digital and bridges the gap between employers and job seekers seamlessly. It connects verified employers with pre-screened job seekers, facilitates upskilling of job seekers through certifications and microlearning, and has an AI-assisted recruiter hiring feature for onboarding candidates.</p>
+  </div>
+
+  <div id="hr" class="tab-content">
+    <h2>Hamara HR</h2>
+    <p>Hamara HR is a comprehensive workforce management tool that helps employees improve their productivity through digital workflow management and training. From the automation of a diverse mobile workforce to creating an engaged and productive work culture, Hamara HR helps run a great company.
+
+    With robust governance features like AI-powered attendance and multilingual support, and productivity features such as task management and digital supervisor, Hamara HR enables you to grow your business with superior mobile-first workforce management software.</p>
+  </div>
+
+  <div id="benefits" class="tab-content">
+    <h2>Hamara Benefits</h2>
+    <p>Taskmo is India’s largest gig discovery platform that helps enterprises scale business operations through digital hiring solutions. It aims at adding value to teams by deploying the right professional for the right job.
+
+    Taskmo offers digital and hyperlocal solutions for financial products, e-commerce, q-commerce, food tech, grocery, mobility, rental, pharmacy, retail, and more through its network of gig workers. The platform has clients that range from start-ups to Fortune 500 and leverages technology for better customer service to gain a competitive advantage and evolve with the marketplace.</p>
+  </div>
+
+  <div id="taskmo" class="tab-content">
+    <h2>Taskmo</h2>
+    <p>Taskmo is India’s largest gig discovery platform that helps enterprises scale business operations through digital hiring solutions. It aims at adding value to teams by deploying the right professional for the right job.
+
+    Taskmo offers digital and hyperlocal solutions for financial products, e-commerce, q-commerce, food tech, grocery, mobility, rental, pharmacy, retail, and more through its network of gig workers. The platform has clients that range from start-ups to Fortune 500 and leverages technology for better customer service to gain a competitive advantage and evolve with the marketplace.</p>
+  </div>
+
+  <!---visit button--->
+  <div style="text-align: center; margin-top: 40px; margin-bottom: 60px;">
+  <a href="https://jumbokonexions.com/" target="_blank"
+     style="background-color: #f9a825; color: white; padding: 20px 50px; border-radius: 40px; text-decoration: none; font-weight: bold; font-size: 16px;">
+    Visit Website
+  </a>
+</div>
+
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">About</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="company_profile.html" style="color: black; text-decoration: none;">Company Profile</a></li>
+        <li><a href="leadership.html" style="color: black; text-decoration: none;">Leadership</a></li>
+        <li><a href="index.html" style="color: black; text-decoration: none;">CSR</a></li>
+        <li><a href="#sustainability.html" style="color: black; text-decoration: none;">Sustainability</a></li>
+      </ul>
+    </div>
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="general_staffing.php" style="color: black; text-decoration: none;">General Staffing</a></li>
+        <li><a href="professional_staffing.php" style="color: black; text-decoration: none;">Professional Staffing</a></li>
+        <li><a href="#" style="color: black; text-decoration: none;">Digital Platform</a></li>
+      </ul>
+    </div>
+        <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" style="color: black; text-decoration: none;">Blogs</a></li>
+        <li><a href="#" style="color: black; text-decoration: none;">Case Studies</a></li>
+        <li><a href="#" style="color: black; text-decoration: none;">Careers</a></li>
+        <li><a href="#" style="color: black; text-decoration: none;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+      <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;">
+        <option selected disabled>Select Country</option>
+        <option>Dubai</option>
+        <option>India</option>
+        <option>Singapore</option>
+        <option>Malaysia</option>
+        <option>Philippines</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2025 KoneXions. All rights reserved.
+  </div>
+</footer>
+
+
+  <!---buttons sections--->
+  <script>
+    function showTab(tabId, button) {
+      // Hide all content sections
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+
+      // Show the selected content and activate the button
+      document.getElementById(tabId).classList.add('active');
+      button.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

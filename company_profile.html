@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="C:\Users\Anushka_Backend\Documents\Konexions\photos\koneXion_logo.png" type="image/png">
+  <title>Konexions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top header */
+    .header {
+      background-color: #001f3f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .icon {
+      font-size: 16px;
+    }
+
+    /* Navigation */
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white; /* or your navbar bg */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.navbar .branding .logo {
+  height: 40px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #002147; /* Navy Blue */
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0056b3;
+}
+
+/* Dropdown icon styling */
+.dropdown-icon {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  padding: 10px 15px;
+  color: #002147;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #0056b3;
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 180px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      color: #001f3f;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-menu li:hover .dropdown-content {
+      display: block;
+    }
+/* Floating Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.social-icon {
+  display: block;
+  text-align: center;
+  padding: 8px 6px;      /* Reduced padding */
+  width: 32px;           /* Reduced width */
+  color: #fff;
+  font-size: 14px;       /* Smaller font size */
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon.facebook {
+  background-color: #3b5998;
+}
+
+.social-icon.youtube {
+  background-color: #c4302b;
+}
+
+.social-icon.instagram {
+  background-color: #e4405f;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+  padding-left: 10px;    /* Adjusted hover padding */
+}
+
+.branding .logo {
+  height: 60px;
+  width: auto;
+}
+/*company profile picture*/
+.company-profile-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.profile-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.company-profile-content {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  color: #002147;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.company-profile-content .content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.company-profile-content ul {
+  padding-left: 20px;
+}
+
+.company-profile-content li {
+  margin-bottom: 10px;
+}
+
+/*Clients*/
+.footprint-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  color: #002147;
+}
+
+.footprint-section .content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footprint-heading {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.footprint-counters {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.counter-box {
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 20px;
+  background-color: #f0f4fa;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: help;
+}
+
+.counter-box:hover {
+  transform: scale(1.05);
+  background-color: #e0ebf7;
+}
+
+.counter {
+  font-size: 48px;
+  font-weight: bold;
+  color: #0077cc;
+  display: block;
+}
+
+.counter-box p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+/*Scale of Business*/
+.scale-section {
+  background-color: #f5f5f5; /* Light gray */
+  padding: 60px 20px;
+}
+
+.scale-heading {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 60px 0 30px;
+  color: #002147;
+  text-align: center;
+}
+
+.scale-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.scale-item {
+  text-align: center;
+  max-width: 220px;
+}
+
+.scale-box {
+  background-color: #e6f4ff; /* Light blue */
+  width: 220px;
+  height: 120px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scale-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.scale-text {
+  margin-top: 12px;
+  font-size: 16px;
+  color: #002147;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.hoverable .scale-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px  rgba(0, 0, 0, 0.2);
+}
+/*corner badge*/
+.corner-badge {
+    position: fixed;
+    top: 200px;
+    right: 1px;
+    z-index: 9999;
+}
+.corner-badge img {
+    width: 60px;
+}
+</style>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<bodyhtm>
+
+  <!-- Top Header -->
+  <header class="header">
+    <div class="logo">
+     
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone icon"></i>
+        <span>+91-9876543210</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope icon"></i>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<nav class="navbar">
+  <div class="branding">
+      <a href="index.html">
+      <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\kon_logo.png" alt="koneXion Logo" class="logo">
+    </a>
+  </div>
+  <ul class="nav-menu">
+    <li class="has-dropdown">
+      <a href="#">About Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="company_profile.html">Company Profile</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="csr.html">CSR</a>
+        <a href="sustainability.html">Sustainability</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="general_staffing.html">General Staffing</a>
+        <a href="professional_staffing.html">Professional Staffing</a>
+        <a href="digital_platform.html">Digital Platform</a>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Media <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="press_release.html">Press Release</a>
+        <a href="press_coverage.html">Press Coverage</a>
+        <a href="media_contact.html">Media Contact</a>
+      </div>
+    </li>
+    <li><a href="#">Career</a></li>
+    <li class="has-dropdown">
+      <a href="#">Overseas <i class="fas fa-chevron-down dropdown-icon"></i></a>
+      <div class="dropdown-content">
+        <a href="#">Dubai</a>
+      </div>
+    </li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Company Profile Image Section -->
+<section class="company-profile-image">
+  <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\company_profile.jpeg" alt="Company Profile" class="profile-banner">
+</section>
+
+<!--content-->
+
+<section class="company-profile-content">
+  <div class="content-wrapper">
+    <p>Konexions Back Office  is one of  India’s largest leader for business management services , leveraging extensive domain expertise and future-ready digital platforms to drive client productivity through outsourced solutions.We provide a host of technology-enabled staffing and managed outsourcing services  being  the leading provider across BFSI, Retail, Telecom, Manufacturing, IT, GCCs, BPO services, and more.</p>
+    
+    <p><strong>Our passion </strong> for delivering exceptional services, augmented by proprietary digital platforms like Workflow automation tools; Customer relationship management (CRM) systems; Data analytics and reporting solutions; Mobile workforce management platforms , has strongly established our credentials as India’s largest employer in the private sector and the biggest integrated business services provider in the country.</p>
+
+    <p>With 10,000+ employees we serve over 75+ clients. We are proud to achieve this success as a 18-year organization.
+We offer a comprehensive suite of technology-driven staffing and managed outsourcing services, 
+Our business strategy is aligned with industry best practices, evolving customer needs, and technological advancements to deliver innovative and efficient solutions. </p>
+    
+  <p><strong>Established in 2007</strong> with the headquartered in Delhi Konexions today has an unmatched geographical presence  scaling with more than 56 offices and more then 30 locations across India,, backed by technology intensity and domain specialization to create exceptional service experiences.</p>
+
+    <p>Our commitment goes beyond streamlined processes; we empower businesses to thrive in diverse environments. With us, clients can expect innovation, flexibility  and tangible results. Let Konexions be your trusted partner in navigating the complexities of modern business. At Konexions we believe in excellence &  we  excel in all that the we do.</p>
+    
+    <p><strong>Our Purpose</strong>is to build a leading institution that drives productivity for clients by outsourcing and optimizing their staffing requirements. We aim to be the preferred  for employees, customers, and investors alike.
+      Our Vision "To be a preferred business process transformation partner for our clients creating value through innovative solutions.<strong>Our Mission</strong> Building on our customers' ambition and optimism to transform their
+    businesses for the better so that their contribution is,	in turn, felt by their customers and the communities they serve. At Konexions, we instill hope into business and trust into the enterprise".</p>
+</div>
+</section>
+
+<!---Clients-->
+<section class="footprint-section"> 
+  <div class="content-wrapper">
+    <h2 class="footprint-heading">Our Footprint</h2>
+    <div class="footprint-counters">
+      <div class="counter-box" title="Countries We Operate In">
+        <span class="counter" data-target="8">0</span>
+        <p>Countries</p>
+      </div>
+      <div class="counter-box" title="Trusted Clients Worldwide">
+        <span class="counter" data-target="500">0</span>
+        <p>Clients</p>
+      </div>
+      <div class="counter-box" title="Professionals in Our Workforce">
+        <span class="counter" data-target="20000">0</span>
+        <p>Professionals</p>
+      </div>
+      <div class="counter-box" title="Cities We Operate In">
+        <span class="counter" data-target="150">0</span>
+        <p>Cities</p>
+      </div>
+      <div class="counter-box" title="Sites Across India">
+        <span class="counter" data-target="100">0</span>
+        <p>Sites</p>
+      </div>
+      <div class="counter-box" title="States Covered">
+        <span class="counter" data-target="28">0</span>
+        <p>States</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Scale of Business-->
+<div class="scale-section">
+  <div class="scale-heading">Scale of Business</div>
+
+  <div class="scale-boxes">
+    <div class="scale-item">
+      <div class="scale-box">
+        <img src="https://www.quesscorp.com/wp-content/uploads/2022/10/cp-1.png" alt="Staffing Icon">
+      </div>
+      <p class="scale-text">We are India’s Largest Staffing Company with 500,000+ associates</p>
+    </div>
+    <div class="scale-item">
+      <div class="scale-box">
+        <img src="https://www.quesscorp.com/wp-content/uploads/2022/10/cp-2.png" alt="Global Icon">
+      </div>
+      <p class="scale-text">Top 37 Largest Global Staffing Firms in 2023</p>
+    </div>
+    <div class="scale-item">
+      <div class="scale-box">
+        <img src="https://www.quesscorp.com/wp-content/uploads/2022/10/cp-3.png" alt="People Icon">
+      </div>
+      <p class="scale-text">96,000+ new associates added in FY-24</p>
+    </div>
+    <div class="scale-item hoverable">
+      <div class="scale-box">
+        <img src="https://www.quesscorp.com/wp-content/uploads/2022/11/image-35.png" alt="Ranking Icon">
+      </div>
+      <p class="scale-text">Ranked amongst the Top 5 Staffing companies globally by headcount</p>
+    </div>
+  </div>
+</div>
+<!-- Footer Section -->
+<footer style="background-color: #002147; color: white; font-family: Arial, sans-serif;">
+
+  <!-- Inner White Content Section -->
+  <div style="background-color: 	#F0F0F0; color: black; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+<!-- About Section -->
+<div style="flex: 1 1 200px; margin: 10px;">
+  <h3 style="color: black; font-weight: bold;">About</h3><br>
+  <ul style="list-style: none; padding: 0;">
+    <li style="margin-bottom: 10px;"><a href="company_profile.html" style="color: black; text-decoration: none;">Company Profile</a></li>
+    <li style="margin-bottom: 10px;"><a href="leadership.html" style="color: black; text-decoration: none;">Leadership</a></li>
+    <li style="margin-bottom: 10px;"><a href="csr.html" style="color: black; text-decoration: none;">CSR</a></li>
+    <li style="margin-bottom: 10px;"><a href="sustainability.html" style="color: black; text-decoration: none;">Sustainability</a></li>
+  </ul>
+</div>
+
+
+    <!-- Services Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li  style="margin-bottom: 10px;"><a href="general_staffing.html" style="color: black; text-decoration: none;">General Staffing</a></li>
+        <li  style="margin-bottom: 10px;"><a href="professional_staffing.html" style="color: black; text-decoration: none;">Professional Staffing</a></li>
+        <li  style="margin-bottom: 10px;"><a href="digital_platform.html" style="color: black; text-decoration: none;">Digital Platform</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media Floating Sidebar -->
+    <div class="social-sidebar">
+      <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">in</a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon facebook">f</a>
+      <a href="https://www.youtube.com" target="_blank" class="social-icon youtube">▶</a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon instagram">📷</a>
+    </div>
+
+       <!----Corner badge--->
+    <div class="corner-badge">
+        <img src="C:\Users\Anushka_Backend\Documents\Konexions\photos\certificate_logo.jpeg" alt="Great Place to Work">
+    </div>
+
+
+    <!-- Resources Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Resources</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li  style="margin-bottom: 10px;"><a href="#" style="color: black; text-decoration: none;">Blogs</a></li>
+        <li  style="margin-bottom: 10px;"><a href="#" style="color: black; text-decoration: none;">Case Studies</a></li>
+        <li  style="margin-bottom: 10px;"><a href="#" style="color: black; text-decoration: none;">Careers</a></li>
+        <li  style="margin-bottom: 10px;"><a href="#" style="color: black; text-decoration: none;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Dropdown Section -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: black; font-weight: bold;">Select a Country/Region</h3>
+      <select style="width: 100%; padding: 10px; background-color: white; color: black; font-weight: bold; border: 1px solid #ccc; border-radius: 4px;">
+        <option selected disabled>Select Country</option>
+        <option>Dubai</option>
+        <option>India</option>
+        <option>Singapore</option>
+        <option>Malaysia</option>
+        <option>Philippines</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; padding: 20px; font-size: 14px; background-color: #002147; color: white;">
+    © 2025 KoneXions. All rights reserved.
+  </div>
+</footer>
+
+<!---clients javascript-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+      counter.innerText = '0';
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText;
+        const increment = target / 200;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCounter, 10);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      updateCounter();
+    });
+  });
+</script>
+
+</body>
+</html>
